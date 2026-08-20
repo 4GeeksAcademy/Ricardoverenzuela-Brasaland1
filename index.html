@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brasaland | El sabor de la brasa real</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-zinc-950 text-zinc-100 font-sans antialiased">
+
+<!-- HEADER NAVEGACIÓN -->
+<header class="sticky top-0 z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800 px-6 py-4">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+        <!-- Logo -->
+        <a href="#inicio" class="text-3xl font-black tracking-wider text-amber-500">BRASALAND</a>
+
+        <!-- Navegación -->
+        <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-zinc-300">
+            <a href="#inicio" data-i18n="nav-inicio" class="hover:text-amber-500 transition-colors">Inicio</a>
+            <a href="#experiencia" data-i18n="nav-experiencia" class="hover:text-amber-500 transition-colors">Experiencia</a>
+            <a href="#menu" data-i18n="nav-menu" class="hover:text-amber-500 transition-colors">Menú</a>
+            <a href="#calculadora" data-i18n="nav-calculadora" class="hover:text-amber-500 transition-colors">Calculadora</a>
+            <a href="#club" data-i18n="nav-club" class="hover:text-amber-500 transition-colors">Club</a>
+        </nav>
+
+        <!-- Botones Derecha -->
+        <div class="flex items-center gap-3">
+            <!-- Selector de Idioma -->
+            <select id="select-lang" onchange="cambiarIdioma(this.value)" class="bg-zinc-900 border border-zinc-800 text-amber-500 font-bold text-xs px-2.5 py-2 rounded-xl focus:outline-none cursor-pointer hover:border-amber-500 transition">
+                <option value="es">🇪🇸 ES</option>
+                <option value="en">🇺🇸 EN</option>
+            </select>
+
+            <a href="#club" data-i18n="btn-club-header" class="bg-amber-500 hover:bg-amber-600 text-zinc-950 font-bold px-4 py-2 rounded-xl text-xs">
+                Únete al Club
+            </a>
+
+            <!-- Carrito -->
+            <button onclick="abrirCarrito()" class="bg-zinc-900 border border-zinc-800 hover:border-amber-500 p-2.5 rounded-xl text-amber-500 transition relative">
+                🛒
+                <span id="cart-count" class="absolute -top-1.5 -right-1.5 bg-amber-500 text-zinc-950 text-[10px] font-black w-4 h-4 rounded-full flex items-center justify-center">0</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- BANNER PROMO -->
+<div id="banner-promo" data-i18n="banner-promo" class="bg-amber-500/10 border-b border-amber-500/20 py-2.5 text-center text-xs sm:text-sm font-medium text-amber-400 px-4">
+  📢 ¡Haz tu pedido directo al carrito y retíralo caliente en tu sede más cercana!
+</div>
+
+<!-- 1. INICIO / HERO -->
+<section id="inicio" class="relative min-h-[80vh] flex items-center justify-center text-center px-4 py-20">
+  <div class="max-w-4xl mx-auto">
+    <span data-i18n="hero-tag" class="inline-block px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 text-xs font-bold uppercase tracking-widest mb-6">
+      Parrilla & Fuego Directo
+    </span>
+    <h1 class="text-5xl sm:text-7xl font-black tracking-tight mb-6 leading-none">
+      <span data-i18n="hero-title-1">El sabor de la brasa,</span> <br>
+      <span data-i18n="hero-title-2" class="bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 bg-clip-text text-transparent">en cada bocado</span>
+    </h1>
+    <p data-i18n="hero-desc" class="text-base sm:text-lg text-zinc-400 max-w-2xl mx-auto mb-10">
+      Cortes seleccionados, sazón artesanal y el fuego perfecto.
+    </p>
+    <div>
+      <a href="#menu" data-i18n="hero-btn" class="bg-gradient-to-r from-orange-600 to-red-600 text-white font-bold text-lg px-8 py-4 rounded-2xl shadow-xl hover:scale-105 transition-transform inline-block">
+        Ver Menú & Pedir 🥩
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 2. EXPERIENCIA -->
+<section id="experiencia" class="py-20 border-t border-zinc-900 bg-zinc-900/30">
+  <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <span data-i18n="exp-tag" class="text-amber-500 font-bold text-xs uppercase tracking-widest">Nuestra Pasión</span>
+      <h2 data-i18n="exp-title" class="text-4xl font-black text-white mt-2 mb-6">La Experiencia Brasaland</h2>
+      <p data-i18n="exp-desc" class="text-zinc-400 leading-relaxed mb-6">
+        No solo cocinamos carne; domamos el fuego. Cada uno de nuestros cortes madurados es preparado con carbón de leña natural para garantizar un sellado crujiente por fuera y una jugosidad incomparable por dentro.
+      </p>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="bg-zinc-900 border border-zinc-800 p-4 rounded-2xl">
+          <span class="text-2xl mb-1 block">🔥</span>
+          <h4 data-i18n="exp-card1-t" class="font-bold text-white text-sm">Maduración 21 Días</h4>
+          <p data-i18n="exp-card1-d" class="text-zinc-500 text-xs">Máxima suavidad y sabor</p>
+        </div>
+        <div class="bg-zinc-900 border border-zinc-800 p-4 rounded-2xl">
+          <span class="text-2xl mb-1 block">🪵</span>
+          <h4 data-i18n="exp-card2-t" class="font-bold text-white text-sm">Leña 100% Natural</h4>
+          <p data-i18n="exp-card2-d" class="text-zinc-500 text-xs">Aroma ahumado único</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=800" alt="Parrilla Brasaland" class="rounded-3xl border border-zinc-800 shadow-2xl">
+    </div>
+  </div>
+</section>
+
+<!-- 3. MENÚ -->
+<section id="menu" class="py-20 border-t border-zinc-900 max-w-7xl mx-auto px-4">
+  <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+    <div>
+      <span data-i18n="menu-tag" class="text-amber-500 font-bold text-xs uppercase tracking-widest">Parrilla Interactiva</span>
+      <h2 data-i18n="menu-title" class="text-4xl font-black text-white mt-1">Especialidades de la Casa</h2>
+    </div>
+
+    <!-- Filtros -->
+    <div class="flex flex-wrap gap-2">
+      <button data-categoria="todos" data-i18n="filter-todos" class="btn-filtro bg-gradient-to-r from-orange-600 to-red-600 text-white font-bold text-xs px-4 py-2.5 rounded-xl">Todos</button>
+      <button data-categoria="cortes" data-i18n="filter-cortes" class="btn-filtro bg-zinc-900 text-zinc-400 border border-zinc-800 font-bold text-xs px-4 py-2.5 rounded-xl">🔥 Cortes</button>
+      <button data-categoria="entradas" data-i18n="filter-entradas" class="btn-filtro bg-zinc-900 text-zinc-400 border border-zinc-800 font-bold text-xs px-4 py-2.5 rounded-xl">🧀 Entradas</button>
+      <button data-categoria="bebidas" data-i18n="filter-bebidas" class="btn-filtro bg-zinc-900 text-zinc-400 border border-zinc-800 font-bold text-xs px-4 py-2.5 rounded-xl">🍹 Bebidas</button>
+      <button data-categoria="postres" data-i18n="filter-postres" class="btn-filtro bg-zinc-900 text-zinc-400 border border-zinc-800 font-bold text-xs px-4 py-2.5 rounded-xl">🍰 Postres</button>
+    </div>
+  </div>
+
+  <div id="grid-menu" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+</section>
+
+<!-- 4. CALCULADORA INTERACTIVA -->
+<section id="calculadora" class="py-16 px-6 bg-zinc-950 border-t border-zinc-900">
+    <div class="max-w-3xl mx-auto bg-zinc-900/80 border border-zinc-800 rounded-2xl p-8 shadow-xl">
+        <div class="text-center mb-8">
+            <span data-i18n="calc-tag" class="text-xs uppercase tracking-widest text-amber-500 font-bold">Herramienta Interactiva</span>
+            <h2 data-i18n="calc-title" class="text-3xl font-black text-zinc-100 mt-1 mb-2">Calculadora de Parrillada 🔥</h2>
+            <p data-i18n="calc-desc" class="text-zinc-400 text-sm">¿Planeas un evento o pedido grupal? Ajusta la cantidad de invitados para calcular las porciones ideales.</p>
+        </div>
+
+        <div class="mb-8">
+            <label data-i18n="calc-label" class="block text-center text-sm font-semibold text-zinc-300 mb-4">Número de Personas:</label>
+            <div class="flex items-center justify-center gap-4 max-w-md mx-auto">
+                <button id="btn-minus" onclick="updateGuests(-1)" class="w-10 h-10 rounded-lg bg-zinc-800 text-zinc-200 hover:bg-zinc-700 font-bold text-lg transition-colors flex items-center justify-center">-</button>
+                <input type="range" id="guest-slider" min="1" max="50" value="1" oninput="calculateBarbecue()" class="w-full accent-amber-500 cursor-pointer">
+                <button id="btn-plus" onclick="updateGuests(1)" class="w-10 h-10 rounded-lg bg-zinc-800 text-zinc-200 hover:bg-zinc-700 font-bold text-lg transition-colors flex items-center justify-center">+</button>
+            </div>
+            <div class="text-center mt-3 text-amber-500 font-bold text-xl"><span id="guest-count">1</span> <span data-i18n="calc-person">Persona</span></div>
+        </div>
+
+        <!-- Resultados -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            <div class="bg-zinc-950 border border-zinc-800/80 rounded-xl p-4 text-center">
+                <span data-i18n="calc-meat" class="block text-xs text-zinc-400 mb-1">Carne Estimada</span>
+                <span id="res-meat" class="text-xl font-bold text-amber-500">0.35 kg</span>
+            </div>
+            <div class="bg-zinc-950 border border-zinc-800/80 rounded-xl p-4 text-center">
+                <span data-i18n="calc-starters" class="block text-xs text-zinc-400 mb-1">Entradas Sugeridas</span>
+                <span id="res-starters" class="text-xl font-bold text-amber-500">1 porción</span>
+            </div>
+            <div class="bg-zinc-950 border border-zinc-800/80 rounded-xl p-4 text-center">
+                <span data-i18n="calc-drinks" class="block text-xs text-zinc-400 mb-1">Bebidas Recomendadas</span>
+                <span id="res-drinks" class="text-xl font-bold text-amber-500">1 unidad</span>
+            </div>
+        </div>
+
+        <button type="button" onclick="abrirModalPresupuesto()" data-i18n="calc-btn" class="w-full py-3.5 bg-amber-500 hover:bg-amber-600 text-zinc-950 font-bold rounded-xl transition-colors text-sm tracking-wide cursor-pointer">
+            ✉️ Enviar este presupuesto a mi correo / WhatsApp
+        </button>
+    </div>
+</section>
+
+<!-- 5. CLUB BRASALAND -->
+<section id="club" class="py-20 border-t border-zinc-900 bg-zinc-900/30">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <span data-i18n="club-tag" class="text-amber-500 font-bold text-xs uppercase tracking-widest">Comunidad Exclusiva</span>
+    <h2 data-i18n="club-title" class="text-4xl sm:text-5xl font-black text-white mt-2 mb-4">Únete al Club Brasaland 👑</h2>
+    <p data-i18n="club-desc" class="text-zinc-400 text-sm max-w-xl mx-auto mb-8">
+      Obtén un 15% de descuento en tu primera compra, acceso a promociones secretas y acumula Brasa Points en cada pedido.
+    </p>
+
+    <form onsubmit="alert('¡Bienvenido al Club Brasaland!'); return false;" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+      <input type="email" required placeholder="Ingresa tu correo electrónico" data-i18n-ph="club-ph" class="bg-zinc-900 border border-zinc-800 rounded-2xl px-5 py-3.5 text-sm text-white focus:outline-none focus:border-orange-500 flex-1">
+      <button type="submit" data-i18n="club-btn" class="bg-gradient-to-r from-orange-600 to-red-600 text-white font-bold px-6 py-3.5 rounded-2xl text-sm hover:scale-105 transition-transform">
+        Unirme al Club 🔥
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- PANEL CARRITO SLIDE-OVER -->
+<div id="cart-overlay" onclick="cerrarCarrito()" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-50"></div>
+<aside id="cart-drawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-zinc-950 border-l border-zinc-800 z-50 transform translate-x-full transition-transform duration-300 flex flex-col justify-between shadow-2xl">
+  
+  <div class="p-6 border-b border-zinc-800 flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <span class="text-2xl">🛒</span>
+      <h3 data-i18n="cart-title" class="text-xl font-black text-white">Tu Pedido</h3>
+    </div>
+    <button onclick="cerrarCarrito()" class="text-zinc-400 hover:text-white text-xl p-2">✕</button>
+  </div>
+
+  <div id="cart-items" class="p-6 overflow-y-auto flex-1 space-y-4"></div>
+
+  <div class="p-6 border-t border-zinc-900 bg-zinc-900/40 space-y-4">
+    <div class="space-y-2">
+      <label data-i18n="cart-delivery-type" class="block text-xs font-bold text-zinc-300 uppercase tracking-wider">Tipo de Entrega:</label>
+      <div class="grid grid-cols-2 gap-2">
+        <button id="btn-tipo-delivery" type="button" onclick="seleccionarTipoEntrega('delivery')" class="border border-amber-500 bg-amber-500/10 text-amber-400 font-bold text-xs py-2.5 rounded-xl transition flex items-center justify-center gap-1.5">
+          🛵 Delivery
+        </button>
+        <button id="btn-tipo-pickup" type="button" onclick="seleccionarTipoEntrega('pickup')" class="border border-zinc-800 bg-zinc-900 text-zinc-400 font-bold text-xs py-2.5 rounded-xl transition flex items-center justify-center gap-1.5">
+          🏪 Pick-up (Retiro)
+        </button>
+      </div>
+    </div>
+
+    <div class="space-y-2 text-sm pt-2 border-t border-zinc-800/60">
+      <div class="flex justify-between text-zinc-400">
+        <span data-i18n="cart-subtotal">Subtotal</span>
+        <span id="cart-subtotal" class="font-semibold text-white">$0</span>
+      </div>
+      <div id="row-delivery-cost" class="flex justify-between text-zinc-400">
+        <span data-i18n="cart-delivery-cost">Costo de Delivery</span>
+        <span class="font-semibold text-amber-500">$3</span>
+      </div>
+      <div class="border-t border-zinc-800 pt-2 flex justify-between text-base font-black text-white">
+        <span data-i18n="cart-total">Total a Pagar</span>
+        <span id="cart-total" class="text-xl text-amber-400">$0</span>
+      </div>
+    </div>
+
+    <button type="button" onclick="solicitarDatosCheckout()" data-i18n="cart-confirm" class="w-full bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-500 hover:to-red-500 text-white font-bold py-3.5 rounded-xl shadow-lg text-sm uppercase tracking-wider">
+      Confirmar Pedido 🔥
+    </button>
+  </div>
+</aside>
+
+<!-- MODAL PRESUPUESTO -->
+<div id="modal-presupuesto" class="hidden fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4">
+  <div class="bg-zinc-900 border border-zinc-800 w-full max-w-md rounded-3xl p-6 sm:p-8 relative shadow-2xl">
+    
+    <button type="button" onclick="cerrarModalPresupuesto()" class="absolute top-4 right-4 text-zinc-400 hover:text-white text-lg w-8 h-8 flex items-center justify-center rounded-full bg-zinc-800">✕</button>
+
+    <div class="text-center mb-6">
+      <span class="text-3xl block mb-2">📊</span>
+      <h3 data-i18n="budget-title" class="text-2xl font-black text-white">Recibir Presupuesto</h3>
+      <p data-i18n="budget-desc" class="text-xs text-zinc-400 mt-1">Te enviaremos los detalles calculados para tu evento.</p>
+    </div>
+
+    <form id="form-presupuesto" class="space-y-4 text-left">
+      <div>
+        <label data-i18n="label-email" class="block text-xs font-bold text-zinc-300 mb-1">Correo Electrónico *</label>
+        <input type="email" id="presupuesto-email" required placeholder="tu@email.com" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500">
+      </div>
+
+      <div>
+        <label data-i18n="label-whatsapp" class="block text-xs font-bold text-zinc-300 mb-1">WhatsApp / Teléfono *</label>
+        <input type="tel" id="presupuesto-whatsapp" required placeholder="+1... / +57..." class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500">
+      </div>
+
+      <button type="submit" data-i18n="budget-btn-send" class="w-full bg-amber-500 hover:bg-amber-600 text-zinc-950 font-bold py-3.5 rounded-xl text-sm uppercase tracking-wider shadow-lg mt-2 transition">
+        Enviar Presupuesto 📩
+      </button>
+    </form>
+
+    <div id="modal-presupuesto-success" class="hidden text-center py-6">
+      <span class="text-5xl block mb-3">✅</span>
+      <h4 data-i18n="budget-success-t" class="text-xl font-bold text-white mb-2">¡Presupuesto Enviado!</h4>
+      <p data-i18n="budget-success-d" class="text-xs text-zinc-400 mb-6">Revisa tu bandeja de correo o WhatsApp en los próximos minutos.</p>
+      <button type="button" onclick="cerrarModalPresupuesto()" data-i18n="btn-close" class="bg-zinc-800 hover:bg-zinc-700 text-white font-bold text-xs px-6 py-2.5 rounded-xl">
+        Cerrar
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<!-- MODAL DE CHECKOUT DETALLADO -->
+<div id="modal-lead" class="hidden fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4 overflow-y-auto">
+  <div class="bg-zinc-900 border border-zinc-800 w-full max-w-xl rounded-3xl p-6 sm:p-8 relative shadow-2xl my-8">
+    
+    <button type="button" onclick="cerrarModalLead()" class="absolute top-4 right-4 text-zinc-400 hover:text-white text-lg w-8 h-8 flex items-center justify-center rounded-full bg-zinc-800">✕</button>
+
+    <div id="wrapper-form-checkout">
+      <div class="text-center mb-6">
+        <span class="text-3xl block mb-2">🔥</span>
+        <h3 data-i18n="checkout-title" class="text-2xl font-black text-white">Finalizar Pedido</h3>
+        <p data-i18n="checkout-desc" class="text-xs text-zinc-400 mt-1">Ingresa tus datos de entrega y método de pago preferido.</p>
+      </div>
+
+      <form id="form-captura-lead" class="space-y-4 text-left">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label data-i18n="checkout-fname" class="block text-xs font-bold text-zinc-300 mb-1">Nombre *</label>
+            <input type="text" id="lead-nombre" required placeholder="Ej. Carlos" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500">
+          </div>
+          <div>
+            <label data-i18n="checkout-lname" class="block text-xs font-bold text-zinc-300 mb-1">Apellido *</label>
+            <input type="text" id="lead-apellido" required placeholder="Ej. Pérez" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label data-i18n="label-email" class="block text-xs font-bold text-zinc-300 mb-1">Correo Electrónico *</label>
+            <input type="email" id="lead-email" required placeholder="tu@email.com" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500">
+          </div>
+          <div>
+            <label data-i18n="checkout-phone" class="block text-xs font-bold text-zinc-300 mb-1">Teléfono Móvil *</label>
+            <input type="tel" id="lead-telefono" required placeholder="+1... / +57..." class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500">
+          </div>
+        </div>
+
+        <div>
+          <label data-i18n="checkout-country" class="block text-xs font-bold text-zinc-300 mb-1">País de Ubicación *</label>
+          <select id="lead-pais" onchange="cambiarPais(this.value)" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500">
+            <option value="USA">🇺🇸 Estados Unidos</option>
+            <option value="COL">🇨🇴 Colombia</option>
+          </select>
+        </div>
+
+        <div id="seccion-direccion" class="space-y-4">
+          <div>
+            <label data-i18n="checkout-address" class="block text-xs font-bold text-zinc-300 mb-1">Dirección Exacta (Calle / Ave / Número de Casa) *</label>
+            <input type="text" id="lead-calle" required placeholder="Ej. 123 Main St / Cra 7 #45-12" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500">
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label data-i18n="checkout-apt" class="block text-xs font-bold text-zinc-300 mb-1">Apto / Piso / Unidad (Opcional)</label>
+              <input type="text" id="lead-apto" placeholder="Apto 4B, Piso 2..." class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500">
+            </div>
+            <div>
+              <label id="label-estado" data-i18n="checkout-city" class="block text-xs font-bold text-zinc-300 mb-1">Ciudad / Estado *</label>
+              <input type="text" id="lead-ciudad-estado" required placeholder="Ej. Miami, FL / Bogotá, D.C." class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500">
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <label data-i18n="checkout-payment" class="block text-xs font-bold text-zinc-300 mb-1">Método de Pago *</label>
+          <select id="lead-pago" required class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500">
+          </select>
+        </div>
+
+        <button type="submit" data-i18n="checkout-btn-submit" class="w-full bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-500 hover:to-red-500 text-white font-bold py-3.5 rounded-xl text-sm uppercase tracking-wider shadow-lg mt-4 transition">
+          Confirmar y Procesar Orden 🔥
+        </button>
+      </form>
+    </div>
+
+    <!-- PANTALLA DE ÉXITO DINÁMICA -->
+    <div id="modal-success" class="hidden text-center py-6">
+      <span class="text-5xl block mb-3">✅</span>
+      <h4 data-i18n="order-success-title" class="text-2xl font-black text-white mb-2">Pedido Finalizado</h4>
+      <p id="msg-success-texto" class="text-sm text-zinc-300 mb-6">Nos pondremos en contacto contigo para coordinar el delivery.</p>
+      <button type="button" onclick="cerrarModalLead()" data-i18n="btn-understood" class="bg-amber-500 hover:bg-amber-600 text-zinc-950 font-bold text-xs px-8 py-3 rounded-xl transition">
+        Entendido
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="border-t border-zinc-900 py-10 text-center text-xs text-zinc-500">
+  <p>© 2026 Brasaland. Todos los derechos reservados.</p>
+</footer>
+
+<script src="script.js?v=8"></script>
+</body>
+</html>

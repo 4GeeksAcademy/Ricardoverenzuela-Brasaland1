@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro Brasa Points | Brasaland</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-zinc-950 text-zinc-100 font-sans antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- Header sencillo -->
+  <header class="border-b border-zinc-800/80 bg-zinc-950/80 backdrop-blur-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <span class="text-3xl">🔥</span>
+        <span class="text-2xl font-black tracking-wider bg-gradient-to-r from-amber-500 via-orange-500 to-red-600 bg-clip-text text-transparent">BRASALAND</span>
+      </a>
+      <a href="index.html" class="text-xs font-semibold text-zinc-400 hover:text-white transition-colors flex items-center gap-1">
+        ← Volver al inicio
+      </a>
+    </div>
+  </header>
+
+  <main class="max-w-xl mx-auto w-full px-4 py-12">
+    <!-- Contenedor del Formulario -->
+    <div class="bg-zinc-900/60 border border-zinc-800 rounded-3xl p-6 sm:p-8 shadow-2xl backdrop-blur-xl">
+      
+      <div class="text-center mb-8">
+        <span class="inline-block px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 text-xs font-bold uppercase tracking-widest mb-3">
+          Programa de Fidelización
+        </span>
+        <h1 class="text-3xl font-black text-white">Únete a Brasa Points</h1>
+        <p class="text-zinc-400 text-xs mt-2">Acumula puntos en cada visita y canjéalos por premios y promociones exclusivas.</p>
+      </div>
+
+      <!-- Mensaje de Éxito (Oculto por defecto) -->
+      <div id="mensaje-exito" class="hidden text-center py-8">
+        <span class="text-5xl block mb-4">🎉</span>
+        <h2 class="text-2xl font-extrabold text-white mb-2">¡Bienvenido a Brasa Points!</h2>
+        <p class="text-zinc-400 text-sm mb-6">Tu registro se ha completado con éxito. Pronto recibirás sorpresas en tu correo electrónico.</p>
+        <a href="index.html" class="inline-block bg-gradient-to-r from-orange-600 to-red-600 text-white font-bold text-sm px-6 py-3 rounded-xl shadow-lg">
+          Volver al Menú Principal
+        </a>
+      </div>
+
+      <!-- Formulario -->
+      <form id="form-brasa-points" class="space-y-5" novalidate>
+        
+        <!-- Nombre Completo -->
+        <div>
+          <label for="nombre" class="block text-xs font-semibold text-zinc-300 mb-1.5">Nombre Completo *</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Ej. Ricardo Verenzuela" class="w-full bg-zinc-950/80 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-orange-500 transition-colors">
+          <p id="error-nombre" class="text-red-500 text-xs mt-1.5 hidden"></p>
+        </div>
+
+        <!-- Correo Electrónico -->
+        <div>
+          <label for="email" class="block text-xs font-semibold text-zinc-300 mb-1.5">Correo Electrónico *</label>
+          <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" class="w-full bg-zinc-950/80 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-orange-500 transition-colors">
+          <p id="error-email" class="text-red-500 text-xs mt-1.5 hidden"></p>
+        </div>
+
+        <!-- Teléfono -->
+        <div>
+          <label for="telefono" class="block text-xs font-semibold text-zinc-300 mb-1.5">Teléfono Movil (con código de país) *</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="+57 300 123 4567 o +1 305 123 4567" class="w-full bg-zinc-950/80 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-orange-500 transition-colors">
+          <p id="error-telefono" class="text-red-500 text-xs mt-1.5 hidden"></p>
+        </div>
+
+        <!-- País y Ciudad (Dinámicos) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="pais" class="block text-xs font-semibold text-zinc-300 mb-1.5">País *</label>
+            <select id="pais" name="pais" class="w-full bg-zinc-950/80 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-orange-500 transition-colors">
+              <option value="">Selecciona tu país</option>
+              <option value="Colombia">Colombia</option>
+              <option value="Estados Unidos">Estados Unidos</option>
+            </select>
+            <p id="error-pais" class="text-red-500 text-xs mt-1.5 hidden"></p>
+          </div>
+
+          <div>
+            <label for="ciudad" class="block text-xs font-semibold text-zinc-300 mb-1.5">Ciudad *</label>
+            <select id="ciudad" name="ciudad" disabled class="w-full bg-zinc-950/80 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-orange-500 transition-colors disabled:opacity-50">
+              <option value="">Selecciona un país primero</option>
+            </select>
+            <p id="error-ciudad" class="text-red-500 text-xs mt-1.5 hidden"></p>
+          </div>
+        </div>
+
+        <!-- Ubicación Favorita -->
+        <div>
+          <label for="ubicacion-favorita" class="block text-xs font-semibold text-zinc-300 mb-1.5">Ubicación Favorita (Opcional)</label>
+          <select id="ubicacion-favorita" name="ubicacion-favorita" disabled class="w-full bg-zinc-950/80 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-orange-500 transition-colors disabled:opacity-50">
+            <option value="">Selecciona ciudad primero</option>
+          </select>
+        </div>
+
+        <!-- Fecha de Nacimiento -->
+        <div>
+          <label for="fecha-nacimiento" class="block text-xs font-semibold text-zinc-300 mb-1.5">Fecha de Nacimiento *</label>
+          <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" class="w-full bg-zinc-950/80 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-orange-500 transition-colors">
+          <p id="error-fecha-nacimiento" class="text-red-500 text-xs mt-1.5 hidden"></p>
+        </div>
+
+        <!-- ¿Cómo conociste Brasaland? -->
+        <div>
+          <label for="como-conociste" class="block text-xs font-semibold text-zinc-300 mb-1.5">¿Cómo conociste Brasaland? *</label>
+          <select id="como-conociste" name="como-conociste" class="w-full bg-zinc-950/80 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-orange-500 transition-colors">
+            <option value="">Selecciona una opción</option>
+            <option value="Redes sociales">Redes sociales (Instagram, TikTok, Facebook)</option>
+            <option value="Recomendación">Recomendación de amigos / familia</option>
+            <option value="Pasaba por el local">Pasaba por el restaurante</option>
+            <option value="Búsqueda en Google">Búsqueda en Google</option>
+            <option value="Otro">Otro</option>
+          </select>
+          <p id="error-como-conociste" class="text-red-500 text-xs mt-1.5 hidden"></p>
+        </div>
+
+        <!-- Términos y Condiciones -->
+        <div class="pt-2">
+          <label class="flex items-start gap-3 cursor-pointer">
+            <input type="checkbox" id="terminos" name="terminos" class="mt-1 rounded bg-zinc-950 border-zinc-800 text-orange-600 focus:ring-orange-500">
+            <span class="text-xs text-zinc-400">Acepto los términos y condiciones de Brasa Points y autorizo el tratamiento de mis datos personales para recibir beneficios y ofertas. *</span>
+          </label>
+          <p id="error-terminos" class="text-red-500 text-xs mt-1.5 hidden"></p>
+        </div>
+
+        <!-- Botón Enviar -->
+        <button type="submit" class="w-full bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-500 hover:to-red-500 text-white font-bold py-3.5 px-6 rounded-xl shadow-lg shadow-orange-950/50 transition-all hover:scale-[1.01] active:scale-[0.99] mt-4">
+          Completar Registro 🔥
+        </button>
+
+      </form>
+    </div>
+  </main>
+
+  <footer class="border-t border-zinc-900 py-6 text-center text-xs text-zinc-500">
+    © 2025 Brasaland. Todos los derechos reservados.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
