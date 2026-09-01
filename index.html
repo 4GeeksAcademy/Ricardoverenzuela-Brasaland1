@@ -32,11 +32,10 @@
                 <option value="en">🇺🇸 EN</option>
             </select>
 
-            <a href="#club" data-i18n="btn-club-header" class="bg-amber-500 hover:bg-amber-600 text-zinc-950 font-bold px-4 py-2 rounded-xl text-xs">
-                Únete al Club
-            </a>
+            <!-- Botón Únete al Club Corregido -->
+            <a href="application.html" data-i18n="btn-club-header" class="bg-amber-500 hover:bg-amber-600 text-zinc-950 font-bold px-4 py-2 rounded-xl text-xs">Únete al Club</a>
 
-            <!-- Carrito -->
+            <!-- Carrito Corregido -->
             <button onclick="abrirCarrito()" class="bg-zinc-900 border border-zinc-800 hover:border-amber-500 p-2.5 rounded-xl text-amber-500 transition relative">
                 🛒
                 <span id="cart-count" class="absolute -top-1.5 -right-1.5 bg-amber-500 text-zinc-950 text-[10px] font-black w-4 h-4 rounded-full flex items-center justify-center">0</span>
@@ -169,14 +168,12 @@
     <p data-i18n="club-desc" class="text-zinc-400 text-sm max-w-xl mx-auto mb-8">
       Obtén un 15% de descuento en tu primera compra, acceso a promociones secretas y acumula Brasa Points en cada pedido.
     </p>
+<div class="flex justify-center mt-6">
+  <a href="application.html" class="bg-gradient-to-r from-orange-600 to-red-600 text-white font-bold px-8 py-3 rounded-xl hover:from-orange-700 hover:to-red-700 transition-all inline-block text-center shadow-lg">
+    Unirme al Club 🔥
+  </a>
+</div>
 
-    <form onsubmit="alert('¡Bienvenido al Club Brasaland!'); return false;" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-      <input type="email" required placeholder="Ingresa tu correo electrónico" data-i18n-ph="club-ph" class="bg-zinc-900 border border-zinc-800 rounded-2xl px-5 py-3.5 text-sm text-white focus:outline-none focus:border-orange-500 flex-1">
-      <button type="submit" data-i18n="club-btn" class="bg-gradient-to-r from-orange-600 to-red-600 text-white font-bold px-6 py-3.5 rounded-2xl text-sm hover:scale-105 transition-transform">
-        Unirme al Club 🔥
-      </button>
-    </form>
-  </div>
 </section>
 
 <!-- PANEL CARRITO SLIDE-OVER -->
@@ -335,7 +332,7 @@
           </select>
         </div>
 
-        <button type="submit" data-i18n="checkout-btn-submit" class="w-full bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-500 hover:to-red-500 text-white font-bold py-3.5 rounded-xl text-sm uppercase tracking-wider shadow-lg mt-4 transition">
+        <button type="submit" data-i18n="checkout-btn-submit" class="w-full bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-500 hover:to-red-500 text-white font-bold py-3.5 rounded-xl shadow-lg mt-4 transition">
           Confirmar y Procesar Orden 🔥
         </button>
       </form>

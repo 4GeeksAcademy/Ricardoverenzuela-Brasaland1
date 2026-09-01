@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brasaland | Solicitud y Reservas</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-zinc-950 text-zinc-100 font-sans antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- HEADER NAVEGACIÓN -->
+  <header class="sticky top-0 z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800 px-6 py-4">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <a href="index.html" class="text-3xl font-black tracking-wider text-amber-500">BRASALAND</a>
+      <a href="index.html" class="text-xs font-bold text-amber-500 border border-amber-500 px-4 py-2 rounded-xl hover:bg-amber-500 hover:text-zinc-950 transition-colors">
+        ← Volver al Inicio
+      </a>
+    </div>
+  </header>
+
+  <!-- FORMULARIO DE RESERVA Y POSTULACIÓN -->
+  <main class="py-12 px-6 flex-grow flex items-center justify-center">
+    <div class="w-full max-w-xl bg-zinc-900 border border-zinc-800 p-8 rounded-2xl shadow-xl">
+      <h1 class="text-2xl font-black text-amber-500 mb-2">Reserva tu Experiencia</h1>
+      <p class="text-zinc-400 text-sm mb-6">Completa los datos a continuación para hacer tu solicitud en Brasaland.</p>
+
+      <form id="booking-form" novalidate class="space-y-5">
+        <!-- Campo Nombre -->
+        <div>
+          <label for="full-name" class="block text-xs font-bold text-zinc-300 uppercase tracking-wider mb-2">Nombre completo</label>
+          <input type="text" id="full-name" name="full-name" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-zinc-100 focus:outline-none focus:border-amber-500">
+          <span class="text-red-500 text-xs hidden mt-1 block" id="full-name-error">El nombre debe tener al menos 3 caracteres.</span>
+        </div>
+
+        <!-- Campo Correo -->
+        <div>
+          <label for="email" class="block text-xs font-bold text-zinc-300 uppercase tracking-wider mb-2">Correo electrónico</label>
+          <input type="email" id="email" name="email" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-zinc-100 focus:outline-none focus:border-amber-500">
+          <span class="text-red-500 text-xs hidden mt-1 block" id="email-error">Ingresa un correo electrónico válido.</span>
+        </div>
+
+        <!-- Campo Teléfono -->
+        <div>
+          <label for="phone" class="block text-xs font-bold text-zinc-300 uppercase tracking-wider mb-2">Teléfono de contacto</label>
+          <input type="tel" id="phone" name="phone" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-zinc-100 focus:outline-none focus:border-amber-500">
+          <span class="text-red-500 text-xs hidden mt-1 block" id="phone-error">El teléfono debe contener entre 7 y 15 dígitos numéricos.</span>
+        </div>
+
+        <!-- Campo Sede -->
+        <div>
+          <label for="location" class="block text-xs font-bold text-zinc-300 uppercase tracking-wider mb-2">Sede de preferencia</label>
+          <select id="location" name="location" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-zinc-100 focus:outline-none focus:border-amber-500">
+            <option value="">Selecciona una sede</option>
+            <option value="colombia">Colombia</option>
+            <option value="florida">Florida</option>
+          </select>
+          <span class="text-red-500 text-xs hidden mt-1 block" id="location-error">Por favor selecciona una sede.</span>
+        </div>
+
+        <!-- Campo Fecha -->
+        <div>
+          <label for="date" class="block text-xs font-bold text-zinc-300 uppercase tracking-wider mb-2">Fecha de visita</label>
+          <input type="date" id="date" name="date" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-zinc-100 focus:outline-none focus:border-amber-500">
+          <span class="text-red-500 text-xs hidden mt-1 block" id="date-error">Por favor selecciona una fecha válida.</span>
+        </div>
+
+        <!-- Botones Submit y Reset -->
+        <div class="pt-4 flex gap-4">
+          <button type="submit" class="flex-1 bg-amber-500 hover:bg-amber-600 text-zinc-950 font-bold py-3 rounded-xl text-sm transition-colors">
+            Enviar Solicitud
+          </button>
+          <button type="reset" class="bg-zinc-800 hover:bg-zinc-700 text-zinc-300 font-bold px-5 py-3 rounded-xl text-sm transition-colors">
+            Limpiar
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-zinc-950 border-t border-zinc-800 py-6 px-6 text-center text-zinc-500 text-xs">
+    <p>&copy; 2026 Brasaland Restaurant. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="validation.js"></script>
+</body>
+</html>

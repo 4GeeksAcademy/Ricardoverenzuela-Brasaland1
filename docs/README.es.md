@@ -1,4 +1,4 @@
-# Carpeta `docs`
+ # Carpeta `docs`
 
 Esta carpeta contiene la **documentación transversal** del monorepo: guías de arquitectura, decisiones técnicas, convenciones, procesos, y cualquier material compartido entre aplicaciones, pipelines, agentes y workflows.
 
