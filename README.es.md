@@ -306,3 +306,11 @@ Esta plantilla fue creada como parte del Programa de Carrera de Ingeniería de I
 Puedes encontrar otras plantillas y recursos similares en la [página de GitHub de 4Geeks Academy](https://github.com/4geeksacademy).
 
 _Esta plantilla la mantiene 4Geeks Academy para el track de Ingeniería de IA. Uso exclusivo del programa._
+
+## Cómo ejecutar el proyecto localmente
+
+Para iniciar el servidor de desarrollo en Codespaces o localmente, ejecuta:
+
+```bash
+npx http-server -p 3000 -a 0.0.0.0
+```
